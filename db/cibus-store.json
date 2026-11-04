@@ -1,0 +1,2976 @@
+{
+  "simulationSettings": {
+    "operatingMode": "DRY_RUN",
+    "enabled": true,
+    "speedMultiplier": 1.5,
+    "stopDurationSeconds": 6,
+    "busCount": 3,
+    "autoReturn": true,
+    "updateIntervalMs": 1500,
+    "liveSourceConfigured": false
+  },
+  "users": [
+    {
+      "id": "user-admin-1",
+      "email": "admin@cibuscebu.ph",
+      "phone": "+639171000001",
+      "passwordHash": "$2a$10$Cz/7HMlqmfoU5Mn/5l5TK.Bck2MEkKuTEwuyyf0rfw/KVaDJUpobK",
+      "fullName": "Engr. Marco Villamor (CIBUS Dispatcher)",
+      "role": "ADMIN",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-04T11:43:04.612Z"
+    },
+    {
+      "id": "user-driver-1",
+      "email": "driver1@cibuscebu.ph",
+      "phone": "+639171000002",
+      "passwordHash": "$2a$10$Cz/7HMlqmfoU5Mn/5l5TK.Bck2MEkKuTEwuyyf0rfw/KVaDJUpobK",
+      "fullName": "Rodelio Cañete (Demo Driver - CIBUS-001)",
+      "role": "DRIVER",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "assignedBusId": "bus-cibus-001",
+      "licenseNumber": "G01-19-004821"
+    },
+    {
+      "id": "user-conductor-1",
+      "email": "conductor1@cibuscebu.ph",
+      "phone": "+639171000003",
+      "passwordHash": "$2a$10$Cz/7HMlqmfoU5Mn/5l5TK.Bck2MEkKuTEwuyyf0rfw/KVaDJUpobK",
+      "fullName": "Jomar Bacalso (Demo Conductor - CIBUS-001)",
+      "role": "CONDUCTOR",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "assignedBusId": "bus-cibus-001",
+      "employeeCode": "COND-CEB-001"
+    },
+    {
+      "id": "user-driver-2",
+      "email": "driver2@cibuscebu.ph",
+      "phone": "+639171000004",
+      "passwordHash": "$2a$10$Cz/7HMlqmfoU5Mn/5l5TK.Bck2MEkKuTEwuyyf0rfw/KVaDJUpobK",
+      "fullName": "Arnel Osmeña (Demo Driver - CIBUS-002)",
+      "role": "DRIVER",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "assignedBusId": "bus-cibus-002",
+      "licenseNumber": "G01-18-009123"
+    },
+    {
+      "id": "user-passenger-1",
+      "email": "commuter@cebu.ph",
+      "phone": "+639171000010",
+      "passwordHash": "$2a$10$Cz/7HMlqmfoU5Mn/5l5TK.Bck2MEkKuTEwuyyf0rfw/KVaDJUpobK",
+      "fullName": "Bea Alcantara (Demo Commuter)",
+      "role": "PASSENGER",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "discountType": "REGULAR"
+    }
+  ],
+  "busRoutes": [
+    {
+      "id": "route-cibus-main-nb",
+      "routeCode": "CIBUS-01-NB",
+      "routeName": "Il Corso (SRP) → Downtown / Fuente Osmeña → N. Escario → Cebu IT Park",
+      "originName": "Il Corso (SRP Terminal)",
+      "destinationName": "Cebu IT Park",
+      "direction": "NORTHBOUND",
+      "baseFarePhp": 15,
+      "perKmFarePhp": 2.25,
+      "operatingHours": "05:30 AM - 10:30 PM",
+      "verificationStatus": "PROVISIONAL",
+      "dataSource": "ROAD_FOLLOWING_OSM_WITH_PROVISIONAL_EXTENSION",
+      "geometrySegments": [
+        {
+          "id": "seg-nb-verified-launch",
+          "label": "Verified Historical Launch Corridor (Il Corso SRP → N. Bacalso Ave → Osmeña Blvd / Fuente)",
+          "verificationStatus": "VERIFIED",
+          "dataSource": "ROAD_FOLLOWING_OSM",
+          "coordinates": [
+            [
+              10.2673,
+              123.8744
+            ],
+            [
+              10.2712,
+              123.8768
+            ],
+            [
+              10.2764,
+              123.8794
+            ],
+            [
+              10.2817,
+              123.881
+            ],
+            [
+              10.2862,
+              123.8805
+            ],
+            [
+              10.2912,
+              123.8809
+            ],
+            [
+              10.2932,
+              123.8832
+            ],
+            [
+              10.2946,
+              123.8862
+            ],
+            [
+              10.2959,
+              123.8891
+            ],
+            [
+              10.2971,
+              123.8914
+            ],
+            [
+              10.2918,
+              123.8884
+            ],
+            [
+              10.2962,
+              123.8918
+            ],
+            [
+              10.2983,
+              123.8934
+            ],
+            [
+              10.2995,
+              123.8952
+            ],
+            [
+              10.3019,
+              123.8957
+            ],
+            [
+              10.3046,
+              123.8949
+            ],
+            [
+              10.3075,
+              123.8943
+            ],
+            [
+              10.3103,
+              123.8939
+            ]
+          ]
+        },
+        {
+          "id": "seg-nb-provisional-north",
+          "label": "Provisional Northern Corridor Extension (Fuente Osmeña → N. Escario St → Cebu IT Park)",
+          "verificationStatus": "PROVISIONAL",
+          "dataSource": "PROVISIONAL_CORRIDOR",
+          "coordinates": [
+            [
+              10.3103,
+              123.8939
+            ],
+            [
+              10.3138,
+              123.8919
+            ],
+            [
+              10.3162,
+              123.8912
+            ],
+            [
+              10.3168,
+              123.8942
+            ],
+            [
+              10.3177,
+              123.8986
+            ],
+            [
+              10.3186,
+              123.9012
+            ],
+            [
+              10.322,
+              123.9022
+            ],
+            [
+              10.3256,
+              123.9035
+            ],
+            [
+              10.3284,
+              123.9051
+            ],
+            [
+              10.3306,
+              123.9062
+            ]
+          ]
+        }
+      ],
+      "isVerifiedCibus": true,
+      "isActive": true
+    },
+    {
+      "id": "route-cibus-main-sb",
+      "routeCode": "CIBUS-01-SB",
+      "routeName": "Cebu IT Park → N. Escario → Fuente Osmeña / Downtown → Il Corso (SRP)",
+      "originName": "Cebu IT Park",
+      "destinationName": "Il Corso (SRP Terminal)",
+      "direction": "SOUTHBOUND",
+      "baseFarePhp": 15,
+      "perKmFarePhp": 2.25,
+      "operatingHours": "05:30 AM - 10:30 PM",
+      "verificationStatus": "PROVISIONAL",
+      "dataSource": "ROAD_FOLLOWING_OSM_WITH_PROVISIONAL_EXTENSION",
+      "geometrySegments": [
+        {
+          "id": "seg-sb-provisional-north",
+          "label": "Provisional Northern Corridor Extension (Cebu IT Park → N. Escario St → Fuente Osmeña)",
+          "verificationStatus": "PROVISIONAL",
+          "dataSource": "PROVISIONAL_CORRIDOR",
+          "coordinates": [
+            [
+              10.3306,
+              123.9062
+            ],
+            [
+              10.3284,
+              123.9051
+            ],
+            [
+              10.3256,
+              123.9035
+            ],
+            [
+              10.322,
+              123.9022
+            ],
+            [
+              10.3186,
+              123.9012
+            ],
+            [
+              10.3177,
+              123.8986
+            ],
+            [
+              10.3168,
+              123.8942
+            ],
+            [
+              10.3162,
+              123.8912
+            ],
+            [
+              10.3138,
+              123.8919
+            ],
+            [
+              10.3103,
+              123.8939
+            ]
+          ]
+        },
+        {
+          "id": "seg-sb-verified-launch",
+          "label": "Verified Historical Launch Corridor (Fuente / Osmeña Blvd → N. Bacalso Ave → Il Corso SRP)",
+          "verificationStatus": "VERIFIED",
+          "dataSource": "ROAD_FOLLOWING_OSM",
+          "coordinates": [
+            [
+              10.3103,
+              123.8939
+            ],
+            [
+              10.3075,
+              123.8943
+            ],
+            [
+              10.3046,
+              123.8949
+            ],
+            [
+              10.3019,
+              123.8957
+            ],
+            [
+              10.2995,
+              123.8952
+            ],
+            [
+              10.2983,
+              123.8934
+            ],
+            [
+              10.2962,
+              123.8918
+            ],
+            [
+              10.2918,
+              123.8884
+            ],
+            [
+              10.2971,
+              123.8914
+            ],
+            [
+              10.2959,
+              123.8891
+            ],
+            [
+              10.2946,
+              123.8862
+            ],
+            [
+              10.2932,
+              123.8832
+            ],
+            [
+              10.2912,
+              123.8809
+            ],
+            [
+              10.2862,
+              123.8805
+            ],
+            [
+              10.2817,
+              123.881
+            ],
+            [
+              10.2764,
+              123.8794
+            ],
+            [
+              10.2712,
+              123.8768
+            ],
+            [
+              10.2673,
+              123.8744
+            ]
+          ]
+        }
+      ],
+      "isVerifiedCibus": true,
+      "isActive": true
+    }
+  ],
+  "busStops": [
+    {
+      "id": "stop-il-corso",
+      "stopCode": "CIBUS-STP-01",
+      "stopName": "Il Corso (SRP Terminal)",
+      "latitude": 10.2673,
+      "longitude": 123.8744,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Southern Terminal at Il Corso Filinvest Lifemalls, South Road Properties (SRP)"
+    },
+    {
+      "id": "stop-sm-seaside",
+      "stopCode": "CIBUS-STP-02",
+      "stopName": "SM Seaside City",
+      "latitude": 10.2817,
+      "longitude": 123.881,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop at SM Seaside City Cebu, South Road Properties (SRP)"
+    },
+    {
+      "id": "stop-b-aranas",
+      "stopCode": "CIBUS-STP-03",
+      "stopName": "B. Aranas Street",
+      "latitude": 10.2918,
+      "longitude": 123.8884,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop near B. Aranas St / Cebu South Road junction (San Nicolas / Duljo-Fatima)"
+    },
+    {
+      "id": "stop-petron-bacalso",
+      "stopCode": "CIBUS-STP-04",
+      "stopName": "Petron (Natalio Bacalso Avenue)",
+      "latitude": 10.2932,
+      "longitude": 123.8832,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop along Natalio Bacalso Avenue (Mambaling / Basak corridor)"
+    },
+    {
+      "id": "stop-gaisano-jai-alai",
+      "stopCode": "CIBUS-STP-05",
+      "stopName": "Gaisano Jai Alai",
+      "latitude": 10.2946,
+      "longitude": 123.8862,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop at former Gaisano Fiesta Mall / Jai Alai, N. Bacalso Ave, Mambaling"
+    },
+    {
+      "id": "stop-budget-builders",
+      "stopCode": "CIBUS-STP-06",
+      "stopName": "Budget Builders",
+      "latitude": 10.2959,
+      "longitude": 123.8891,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop at Budget Builders along Natalio Bacalso Avenue"
+    },
+    {
+      "id": "stop-phoenix-bacalso",
+      "stopCode": "CIBUS-STP-07",
+      "stopName": "Phoenix (Natalio Bacalso Avenue)",
+      "latitude": 10.2971,
+      "longitude": 123.8914,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop near Phoenix Petroleum station along Natalio Bacalso Avenue"
+    },
+    {
+      "id": "stop-csbt-brt",
+      "stopCode": "CIBUS-BRT-08",
+      "stopName": "Cebu South Bus Terminal",
+      "latitude": 10.2983,
+      "longitude": 123.8934,
+      "stopType": "AUTHORIZED_BRT_LANE",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop & Authorized CBRT Corridor Stop at Cebu South Bus Terminal (N. Bacalso Ave)"
+    },
+    {
+      "id": "stop-central-bank",
+      "stopCode": "CIBUS-BRT-09",
+      "stopName": "Central Bank",
+      "latitude": 10.3019,
+      "longitude": 123.8957,
+      "stopType": "AUTHORIZED_BRT_LANE",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop at Bangko Sentral ng Pilipinas (Central Bank), Osmeña Boulevard / P. del Rosario"
+    },
+    {
+      "id": "stop-doh-office",
+      "stopCode": "CIBUS-BRT-10",
+      "stopName": "DOH Office",
+      "latitude": 10.3075,
+      "longitude": 123.8943,
+      "stopType": "AUTHORIZED_BRT_LANE",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop in front of Department of Health (DOH Region VII) / Vicente Sotto, Osmeña Boulevard"
+    },
+    {
+      "id": "stop-mcdonalds-osmena",
+      "stopCode": "CIBUS-BRT-11",
+      "stopName": "McDonald's (Osmeña Boulevard)",
+      "latitude": 10.3103,
+      "longitude": 123.8939,
+      "stopType": "AUTHORIZED_BRT_LANE",
+      "verificationStatus": "VERIFIED",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Verified CIBUS Historical Launch Stop at McDonald's Fuente Osmeña Circle / Osmeña Boulevard"
+    },
+    {
+      "id": "stop-escario-capitol",
+      "stopCode": "CIBUS-PRV-12",
+      "stopName": "N. Escario Street (Capitol Site – Placeholder)",
+      "latitude": 10.3168,
+      "longitude": 123.8942,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "PROVISIONAL",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "PROVISIONAL PLACEHOLDER STOP along N. Escario Street corridor near Cebu Provincial Capitol (Unverified intermediate stop sequence)"
+    },
+    {
+      "id": "stop-gorordo-salinas",
+      "stopCode": "CIBUS-PRV-13",
+      "stopName": "Salinas Drive / Lahug (Provisional Placeholder)",
+      "latitude": 10.3256,
+      "longitude": 123.9035,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "PROVISIONAL",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "PROVISIONAL PLACEHOLDER STOP along Gorordo Ave / Salinas Drive approaching Cebu IT Park (Unverified intermediate stop sequence)"
+    },
+    {
+      "id": "stop-it-park",
+      "stopCode": "CIBUS-STP-14",
+      "stopName": "Cebu IT Park",
+      "latitude": 10.3306,
+      "longitude": 123.9062,
+      "stopType": "CIBUS_DESIGNATED",
+      "verificationStatus": "PROVISIONAL",
+      "isVerifiedCibus": true,
+      "isActive": true,
+      "landmarkNotes": "Researched Northern Endpoint at Cebu IT Park Transport Terminal, Apas/Lahug (Northern extension endpoint)"
+    }
+  ],
+  "routeStops": [
+    {
+      "id": "rs-nb-1",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-il-corso",
+      "direction": "NORTHBOUND",
+      "stopSequence": 1,
+      "distanceFromOriginKm": 0,
+      "estimatedMinutesFromOrigin": 0
+    },
+    {
+      "id": "rs-nb-2",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-sm-seaside",
+      "direction": "NORTHBOUND",
+      "stopSequence": 2,
+      "distanceFromOriginKm": 2.2,
+      "estimatedMinutesFromOrigin": 4
+    },
+    {
+      "id": "rs-nb-3",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-petron-bacalso",
+      "direction": "NORTHBOUND",
+      "stopSequence": 3,
+      "distanceFromOriginKm": 3.83,
+      "estimatedMinutesFromOrigin": 8
+    },
+    {
+      "id": "rs-nb-4",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-gaisano-jai-alai",
+      "direction": "NORTHBOUND",
+      "stopSequence": 4,
+      "distanceFromOriginKm": 4.28,
+      "estimatedMinutesFromOrigin": 12
+    },
+    {
+      "id": "rs-nb-5",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-budget-builders",
+      "direction": "NORTHBOUND",
+      "stopSequence": 5,
+      "distanceFromOriginKm": 4.72,
+      "estimatedMinutesFromOrigin": 16
+    },
+    {
+      "id": "rs-nb-6",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-phoenix-bacalso",
+      "direction": "NORTHBOUND",
+      "stopSequence": 6,
+      "distanceFromOriginKm": 5.07,
+      "estimatedMinutesFromOrigin": 20
+    },
+    {
+      "id": "rs-nb-7",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-b-aranas",
+      "direction": "NORTHBOUND",
+      "stopSequence": 7,
+      "distanceFromOriginKm": 5.91,
+      "estimatedMinutesFromOrigin": 24
+    },
+    {
+      "id": "rs-nb-8",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-csbt-brt",
+      "direction": "NORTHBOUND",
+      "stopSequence": 8,
+      "distanceFromOriginKm": 7.05,
+      "estimatedMinutesFromOrigin": 28
+    },
+    {
+      "id": "rs-nb-9",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-central-bank",
+      "direction": "NORTHBOUND",
+      "stopSequence": 9,
+      "distanceFromOriginKm": 7.64,
+      "estimatedMinutesFromOrigin": 32
+    },
+    {
+      "id": "rs-nb-10",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-doh-office",
+      "direction": "NORTHBOUND",
+      "stopSequence": 10,
+      "distanceFromOriginKm": 8.44,
+      "estimatedMinutesFromOrigin": 36
+    },
+    {
+      "id": "rs-nb-11",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-mcdonalds-osmena",
+      "direction": "NORTHBOUND",
+      "stopSequence": 11,
+      "distanceFromOriginKm": 8.83,
+      "estimatedMinutesFromOrigin": 40
+    },
+    {
+      "id": "rs-nb-12",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-escario-capitol",
+      "direction": "NORTHBOUND",
+      "stopSequence": 12,
+      "distanceFromOriginKm": 9.73,
+      "estimatedMinutesFromOrigin": 44
+    },
+    {
+      "id": "rs-nb-13",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-gorordo-salinas",
+      "direction": "NORTHBOUND",
+      "stopSequence": 13,
+      "distanceFromOriginKm": 11.49,
+      "estimatedMinutesFromOrigin": 48
+    },
+    {
+      "id": "rs-nb-14",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-it-park",
+      "direction": "NORTHBOUND",
+      "stopSequence": 14,
+      "distanceFromOriginKm": 12.28,
+      "estimatedMinutesFromOrigin": 52
+    },
+    {
+      "id": "rs-sb-1",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-it-park",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 1,
+      "distanceFromOriginKm": 0,
+      "estimatedMinutesFromOrigin": 0
+    },
+    {
+      "id": "rs-sb-2",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-gorordo-salinas",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 2,
+      "distanceFromOriginKm": 0.79,
+      "estimatedMinutesFromOrigin": 4
+    },
+    {
+      "id": "rs-sb-3",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-escario-capitol",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 3,
+      "distanceFromOriginKm": 2.55,
+      "estimatedMinutesFromOrigin": 8
+    },
+    {
+      "id": "rs-sb-4",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-mcdonalds-osmena",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 4,
+      "distanceFromOriginKm": 3.45,
+      "estimatedMinutesFromOrigin": 12
+    },
+    {
+      "id": "rs-sb-5",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-doh-office",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 5,
+      "distanceFromOriginKm": 3.84,
+      "estimatedMinutesFromOrigin": 16
+    },
+    {
+      "id": "rs-sb-6",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-central-bank",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 6,
+      "distanceFromOriginKm": 4.64,
+      "estimatedMinutesFromOrigin": 20
+    },
+    {
+      "id": "rs-sb-7",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-csbt-brt",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 7,
+      "distanceFromOriginKm": 5.23,
+      "estimatedMinutesFromOrigin": 24
+    },
+    {
+      "id": "rs-sb-8",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-b-aranas",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 8,
+      "distanceFromOriginKm": 6.37,
+      "estimatedMinutesFromOrigin": 28
+    },
+    {
+      "id": "rs-sb-9",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-phoenix-bacalso",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 9,
+      "distanceFromOriginKm": 7.21,
+      "estimatedMinutesFromOrigin": 32
+    },
+    {
+      "id": "rs-sb-10",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-budget-builders",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 10,
+      "distanceFromOriginKm": 7.56,
+      "estimatedMinutesFromOrigin": 36
+    },
+    {
+      "id": "rs-sb-11",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-gaisano-jai-alai",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 11,
+      "distanceFromOriginKm": 8,
+      "estimatedMinutesFromOrigin": 40
+    },
+    {
+      "id": "rs-sb-12",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-petron-bacalso",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 12,
+      "distanceFromOriginKm": 8.45,
+      "estimatedMinutesFromOrigin": 44
+    },
+    {
+      "id": "rs-sb-13",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-sm-seaside",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 13,
+      "distanceFromOriginKm": 10.07,
+      "estimatedMinutesFromOrigin": 48
+    },
+    {
+      "id": "rs-sb-14",
+      "routeId": "route-cibus-main-sb",
+      "stopId": "stop-il-corso",
+      "direction": "SOUTHBOUND",
+      "stopSequence": 14,
+      "distanceFromOriginKm": 12.27,
+      "estimatedMinutesFromOrigin": 52
+    }
+  ],
+  "buses": [
+    {
+      "id": "bus-cibus-001",
+      "busCode": "CIBUS-001",
+      "plateNumber": "DEMO-001",
+      "model": "Golden Dragon XML6105 Low-Entry Euro-4 (Placeholder Bus)",
+      "totalCapacity": 40,
+      "availableSeats": 15,
+      "occupiedSeats": 25,
+      "seatSource": "SIMULATED_SAMPLE",
+      "lastSeatUpdateAt": "2026-11-04T11:43:04.612Z",
+      "assignedRouteId": "route-cibus-main-nb",
+      "currentDirection": "NORTHBOUND",
+      "operationalStatus": "IN_SERVICE",
+      "nextStopId": "stop-gorordo-salinas",
+      "lastLat": 10.323671,
+      "lastLng": 123.902804,
+      "lastHeading": 20,
+      "lastSpeedKmh": 39,
+      "lastGpsUpdateAt": "2026-11-04T12:48:15.649Z",
+      "gpsSource": "DEMO_MODE",
+      "isDemoData": true,
+      "simulationStatus": "MOVING",
+      "dwellRemainingSeconds": 0,
+      "currentSegmentIndex": 23,
+      "routeProgressPct": 90
+    },
+    {
+      "id": "bus-cibus-002",
+      "busCode": "CIBUS-002",
+      "plateNumber": "DEMO-002",
+      "model": "Golden Dragon XML6105 Low-Entry Euro-4 (Placeholder Bus)",
+      "totalCapacity": 40,
+      "availableSeats": 24,
+      "occupiedSeats": 16,
+      "seatSource": "SIMULATED_SAMPLE",
+      "lastSeatUpdateAt": "2026-11-04T11:43:04.612Z",
+      "assignedRouteId": "route-cibus-main-sb",
+      "currentDirection": "SOUTHBOUND",
+      "operationalStatus": "IN_SERVICE",
+      "nextStopId": "stop-escario-capitol",
+      "lastLat": 10.316445,
+      "lastLng": 123.892427,
+      "lastHeading": 259,
+      "lastSpeedKmh": 39,
+      "lastGpsUpdateAt": "2026-11-04T12:48:15.649Z",
+      "gpsSource": "DEMO_MODE",
+      "isDemoData": true,
+      "simulationStatus": "MOVING",
+      "dwellRemainingSeconds": 0,
+      "currentSegmentIndex": 6,
+      "routeProgressPct": 25
+    },
+    {
+      "id": "bus-cibus-003",
+      "busCode": "CIBUS-003",
+      "plateNumber": "DEMO-003",
+      "model": "Yutong ZK6118HGA Low-Floor City Bus (Placeholder Bus)",
+      "totalCapacity": 45,
+      "availableSeats": 18,
+      "occupiedSeats": 27,
+      "seatSource": "SIMULATED_SAMPLE",
+      "lastSeatUpdateAt": "2026-11-04T11:43:04.612Z",
+      "assignedRouteId": "route-cibus-main-nb",
+      "currentDirection": "NORTHBOUND",
+      "operationalStatus": "IN_SERVICE",
+      "nextStopId": "stop-sm-seaside",
+      "lastLat": 10.274369,
+      "lastLng": 123.878384,
+      "lastHeading": 26,
+      "lastSpeedKmh": 39,
+      "lastGpsUpdateAt": "2026-11-04T12:48:15.649Z",
+      "gpsSource": "DEMO_MODE",
+      "isDemoData": true,
+      "simulationStatus": "MOVING",
+      "dwellRemainingSeconds": 0,
+      "currentSegmentIndex": 1,
+      "routeProgressPct": 6
+    }
+  ],
+  "trips": [
+    {
+      "id": "trip-1793793811079",
+      "busId": "bus-cibus-001",
+      "routeId": "route-cibus-main-nb",
+      "driverId": "user-driver-1",
+      "conductorId": null,
+      "direction": "NORTHBOUND",
+      "status": "ACTIVE",
+      "currentStopSequence": 1,
+      "nextStopId": "stop-il-corso",
+      "startedAt": "2026-11-04T12:03:31.079Z",
+      "endedAt": null
+    }
+  ],
+  "gpsHistory": [],
+  "seatUpdates": [],
+  "waitingRequests": [
+    {
+      "id": "wait-sample-1",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Sample Commuter Group A (Demo)",
+      "routeId": "route-cibus-main-nb",
+      "direction": "NORTHBOUND",
+      "boardingStopId": "stop-sm-seaside",
+      "destinationStopId": "stop-mcdonalds-osmena",
+      "targetBusId": "bus-cibus-001",
+      "tripId": null,
+      "passengerCount": 5,
+      "status": "CANCELLED",
+      "isSampleData": true,
+      "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "updatedAt": "2026-11-04T11:43:04.612Z",
+      "expiresAt": "2026-11-04T13:43:04.667Z"
+    },
+    {
+      "id": "wait-sample-2",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Sample Commuter Group B (Demo)",
+      "routeId": "route-cibus-main-nb",
+      "direction": "NORTHBOUND",
+      "boardingStopId": "stop-csbt-brt",
+      "destinationStopId": "stop-it-park",
+      "targetBusId": "bus-cibus-002",
+      "tripId": null,
+      "passengerCount": 9,
+      "status": "CANCELLED",
+      "isSampleData": true,
+      "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "updatedAt": "2026-11-04T11:43:04.612Z",
+      "expiresAt": "2026-11-04T13:43:04.667Z"
+    },
+    {
+      "id": "wait-sample-3",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Sample Commuter Group C (Demo)",
+      "routeId": "route-cibus-main-nb",
+      "direction": "NORTHBOUND",
+      "boardingStopId": "stop-doh-office",
+      "destinationStopId": "stop-it-park",
+      "targetBusId": "bus-cibus-001",
+      "tripId": null,
+      "passengerCount": 4,
+      "status": "CANCELLED",
+      "isSampleData": true,
+      "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "updatedAt": "2026-11-04T11:43:04.612Z",
+      "expiresAt": "2026-11-04T13:43:04.667Z"
+    },
+    {
+      "id": "wait-sample-4",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Sample Commuter Group D (Demo)",
+      "routeId": "route-cibus-main-sb",
+      "direction": "SOUTHBOUND",
+      "boardingStopId": "stop-mcdonalds-osmena",
+      "destinationStopId": "stop-sm-seaside",
+      "targetBusId": "bus-cibus-003",
+      "tripId": null,
+      "passengerCount": 6,
+      "status": "CANCELLED",
+      "isSampleData": true,
+      "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "updatedAt": "2026-11-04T11:43:04.612Z",
+      "expiresAt": "2026-11-04T13:43:04.667Z"
+    },
+    {
+      "id": "wait-1793793795152",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Demo Commuter (Dry-Run)",
+      "routeId": "route-cibus-main-nb",
+      "direction": "NORTHBOUND",
+      "boardingStopId": "stop-il-corso",
+      "destinationStopId": "stop-it-park",
+      "targetBusId": null,
+      "tripId": null,
+      "passengerCount": 1,
+      "status": "EXPIRED",
+      "isSampleData": true,
+      "notes": "DEMO MODE – SIMULATED WAITING REQUEST",
+      "createdAt": "2026-11-04T12:03:15.152Z",
+      "updatedAt": "2026-11-04T12:48:15.650Z",
+      "expiresAt": "2026-11-04T12:48:15.152Z"
+    }
+  ],
+  "boardingRecords": [
+    {
+      "id": "brd-sample-1",
+      "tripId": null,
+      "busId": "bus-cibus-001",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-il-corso",
+      "confirmedByUserId": "user-conductor-1",
+      "expectedPassengerCount": 6,
+      "expectedRequestCount": 2,
+      "actualBoardedCount": 7,
+      "alightedCount": 0,
+      "resolvedRequestIds": [],
+      "createdAt": "2026-11-04T11:43:04.612Z"
+    },
+    {
+      "id": "brd-sample-2",
+      "tripId": null,
+      "busId": "bus-cibus-002",
+      "routeId": "route-cibus-main-nb",
+      "stopId": "stop-sm-seaside",
+      "confirmedByUserId": "user-conductor-1",
+      "expectedPassengerCount": 8,
+      "expectedRequestCount": 3,
+      "actualBoardedCount": 8,
+      "alightedCount": 2,
+      "resolvedRequestIds": [],
+      "createdAt": "2026-11-04T11:43:04.612Z"
+    }
+  ],
+  "fareConfigurations": [
+    {
+      "id": "fare-route-cibus-main-nb-1-2",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 2.2,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-3",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 3.83,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-4",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 4.28,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-5",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 4.72,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-6",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 5.07,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-7",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 5.91,
+      "regularFarePhp": 19,
+      "discountedFarePhp": 15,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-8",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 7.05,
+      "regularFarePhp": 22,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 7.64,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 8.44,
+      "regularFarePhp": 25,
+      "discountedFarePhp": 20,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 8.83,
+      "regularFarePhp": 26,
+      "discountedFarePhp": 21,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 9.73,
+      "regularFarePhp": 28,
+      "discountedFarePhp": 22,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 11.49,
+      "regularFarePhp": 32,
+      "discountedFarePhp": 26,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-1-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-il-corso",
+      "toStopId": "stop-it-park",
+      "distanceKm": 12.28,
+      "regularFarePhp": 34,
+      "discountedFarePhp": 27,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-3",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 1.63,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-4",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 2.08,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-5",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 2.52,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-6",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 2.87,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-7",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 3.71,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-8",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 4.85,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 5.44,
+      "regularFarePhp": 18,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 6.24,
+      "regularFarePhp": 20,
+      "discountedFarePhp": 16,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 6.63,
+      "regularFarePhp": 21,
+      "discountedFarePhp": 17,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 7.53,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 9.29,
+      "regularFarePhp": 27,
+      "discountedFarePhp": 22,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-2-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-it-park",
+      "distanceKm": 10.08,
+      "regularFarePhp": 29,
+      "discountedFarePhp": 23,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-4",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-5",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 0.89,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-6",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 1.24,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-7",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 2.08,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-8",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 3.22,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 3.81,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 4.61,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 5,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 5.9,
+      "regularFarePhp": 19,
+      "discountedFarePhp": 15,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 7.66,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-3-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-it-park",
+      "distanceKm": 8.45,
+      "regularFarePhp": 25,
+      "discountedFarePhp": 20,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-5",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-6",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 0.79,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-7",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 1.63,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-8",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 2.77,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 3.36,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 4.16,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 4.55,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 5.45,
+      "regularFarePhp": 18,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 7.21,
+      "regularFarePhp": 22,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-4-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-it-park",
+      "distanceKm": 8,
+      "regularFarePhp": 24,
+      "discountedFarePhp": 19,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-6",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-7",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 1.19,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-8",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 2.33,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 2.92,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 3.72,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 4.11,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 5.01,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 6.77,
+      "regularFarePhp": 21,
+      "discountedFarePhp": 17,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-5-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-it-park",
+      "distanceKm": 7.56,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-7",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 0.84,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-8",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 1.98,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 2.57,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 3.37,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 3.76,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 4.66,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 6.42,
+      "regularFarePhp": 20,
+      "discountedFarePhp": 16,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-6-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-it-park",
+      "distanceKm": 7.21,
+      "regularFarePhp": 22,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-7-8",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 1.14,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-7-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 1.73,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-7-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 2.53,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-7-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 2.92,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-7-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 3.82,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-7-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 5.58,
+      "regularFarePhp": 19,
+      "discountedFarePhp": 15,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-7-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-it-park",
+      "distanceKm": 6.37,
+      "regularFarePhp": 20,
+      "discountedFarePhp": 16,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-8-9",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 0.59,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-8-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 1.39,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-8-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 1.78,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-8-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 2.68,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-8-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 4.44,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-8-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-it-park",
+      "distanceKm": 5.23,
+      "regularFarePhp": 18,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-9-10",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 0.8,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-9-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 1.19,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-9-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 2.09,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-9-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 3.85,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-9-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-it-park",
+      "distanceKm": 4.64,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-10-11",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-10-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 1.29,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-10-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 3.05,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-10-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-it-park",
+      "distanceKm": 3.84,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-11-12",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 0.9,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-11-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 2.66,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-11-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-it-park",
+      "distanceKm": 3.45,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-12-13",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 1.76,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-12-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-it-park",
+      "distanceKm": 2.55,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-nb-13-14",
+      "routeId": "route-cibus-main-nb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-it-park",
+      "distanceKm": 0.79,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-2",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-gorordo-salinas",
+      "distanceKm": 0.79,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-3",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 2.55,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-4",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 3.45,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-5",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 3.84,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-6",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 4.64,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-7",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 5.23,
+      "regularFarePhp": 18,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-8",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 6.37,
+      "regularFarePhp": 20,
+      "discountedFarePhp": 16,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 7.21,
+      "regularFarePhp": 22,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 7.56,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 8,
+      "regularFarePhp": 24,
+      "discountedFarePhp": 19,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 8.45,
+      "regularFarePhp": 25,
+      "discountedFarePhp": 20,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 10.07,
+      "regularFarePhp": 29,
+      "discountedFarePhp": 23,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-1-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-it-park",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 12.27,
+      "regularFarePhp": 34,
+      "discountedFarePhp": 27,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-3",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-escario-capitol",
+      "distanceKm": 1.76,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-4",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 2.66,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-5",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 3.05,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-6",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 3.85,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-7",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 4.44,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-8",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 5.58,
+      "regularFarePhp": 19,
+      "discountedFarePhp": 15,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 6.42,
+      "regularFarePhp": 20,
+      "discountedFarePhp": 16,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 6.77,
+      "regularFarePhp": 21,
+      "discountedFarePhp": 17,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 7.21,
+      "regularFarePhp": 22,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 7.66,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 9.28,
+      "regularFarePhp": 27,
+      "discountedFarePhp": 22,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-2-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gorordo-salinas",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 11.48,
+      "regularFarePhp": 32,
+      "discountedFarePhp": 26,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-4",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-mcdonalds-osmena",
+      "distanceKm": 0.9,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-5",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 1.29,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-6",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 2.09,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-7",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 2.68,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-8",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 3.82,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 4.66,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 5.01,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 5.45,
+      "regularFarePhp": 18,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 5.9,
+      "regularFarePhp": 19,
+      "discountedFarePhp": 15,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 7.52,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-3-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-escario-capitol",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 9.72,
+      "regularFarePhp": 28,
+      "discountedFarePhp": 22,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-5",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-doh-office",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-6",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 1.19,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-7",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 1.78,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-8",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 2.92,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 3.76,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 4.11,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 4.55,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 5,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 6.62,
+      "regularFarePhp": 21,
+      "discountedFarePhp": 17,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-4-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-mcdonalds-osmena",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 8.82,
+      "regularFarePhp": 26,
+      "discountedFarePhp": 21,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-6",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-central-bank",
+      "distanceKm": 0.8,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-7",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 1.39,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-8",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 2.53,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 3.37,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 3.72,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 4.16,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 4.61,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 6.23,
+      "regularFarePhp": 20,
+      "discountedFarePhp": 16,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-5-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-doh-office",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 8.43,
+      "regularFarePhp": 25,
+      "discountedFarePhp": 20,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-7",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-csbt-brt",
+      "distanceKm": 0.59,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-8",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 1.73,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 2.57,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 2.92,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 3.36,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 3.81,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 5.43,
+      "regularFarePhp": 18,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-6-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-central-bank",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 7.63,
+      "regularFarePhp": 23,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-7-8",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-b-aranas",
+      "distanceKm": 1.14,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-7-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 1.98,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-7-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 2.33,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-7-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 2.77,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-7-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 3.22,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-7-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 4.84,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-7-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-csbt-brt",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 7.04,
+      "regularFarePhp": 22,
+      "discountedFarePhp": 18,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-8-9",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-phoenix-bacalso",
+      "distanceKm": 0.84,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-8-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 1.19,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-8-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 1.63,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-8-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 2.08,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-8-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 3.7,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-8-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-b-aranas",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 5.9,
+      "regularFarePhp": 19,
+      "discountedFarePhp": 15,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-9-10",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-budget-builders",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-9-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 0.79,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-9-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 1.24,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-9-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 2.86,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-9-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-phoenix-bacalso",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 5.06,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-10-11",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-gaisano-jai-alai",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-10-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 0.89,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-10-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 2.51,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-10-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-budget-builders",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 4.71,
+      "regularFarePhp": 17,
+      "discountedFarePhp": 14,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-11-12",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-petron-bacalso",
+      "distanceKm": 0.5,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-11-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 2.07,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-11-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-gaisano-jai-alai",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 4.27,
+      "regularFarePhp": 16,
+      "discountedFarePhp": 13,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-12-13",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-sm-seaside",
+      "distanceKm": 1.62,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-12-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-petron-bacalso",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 3.82,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    },
+    {
+      "id": "fare-route-cibus-main-sb-13-14",
+      "routeId": "route-cibus-main-sb",
+      "fromStopId": "stop-sm-seaside",
+      "toStopId": "stop-il-corso",
+      "distanceKm": 2.2,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
+      "isActive": true
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-sample-gcash-1",
+      "referenceCode": "CIBUS-PAY-GC8801",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Bea Alcantara (Demo Commuter)",
+      "routeId": "route-cibus-main-nb",
+      "originStopId": "stop-sm-seaside",
+      "destinationStopId": "stop-mcdonalds-osmena",
+      "busId": "bus-cibus-001",
+      "passengerCount": 2,
+      "unitFarePhp": 19,
+      "amountPhp": 38,
+      "paymentMethod": "GCASH",
+      "providerName": "PayMongo_Mock_Sandbox",
+      "providerTxId": "paymongo_src_gcash_demo_8801",
+      "status": "PAID",
+      "verifiedViaCallback": true,
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "verifiedAt": "2026-11-04T11:43:04.612Z"
+    },
+    {
+      "id": "pay-sample-maya-2",
+      "referenceCode": "CIBUS-PAY-MY9902",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Bea Alcantara (Demo Commuter)",
+      "routeId": "route-cibus-main-nb",
+      "originStopId": "stop-il-corso",
+      "destinationStopId": "stop-it-park",
+      "busId": "bus-cibus-002",
+      "passengerCount": 1,
+      "unitFarePhp": 33,
+      "amountPhp": 33,
+      "paymentMethod": "MAYA",
+      "providerName": "PayMongo_Mock_Sandbox",
+      "providerTxId": "paymongo_src_maya_demo_9902",
+      "status": "PAID",
+      "verifiedViaCallback": true,
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "verifiedAt": "2026-11-04T11:43:04.612Z"
+    },
+    {
+      "id": "pay-sample-qrph-3",
+      "referenceCode": "CIBUS-PAY-QR7703",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Bea Alcantara (Demo Commuter)",
+      "routeId": "route-cibus-main-sb",
+      "originStopId": "stop-it-park",
+      "destinationStopId": "stop-csbt-brt",
+      "busId": "bus-cibus-003",
+      "passengerCount": 1,
+      "unitFarePhp": 21,
+      "amountPhp": 21,
+      "paymentMethod": "QR_PH",
+      "providerName": "PayMongo_Mock_Sandbox",
+      "providerTxId": "paymongo_src_qrph_demo_7703",
+      "status": "PENDING",
+      "verifiedViaCallback": false,
+      "createdAt": "2026-11-04T11:43:04.612Z",
+      "verifiedAt": null
+    },
+    {
+      "id": "pay-1793793801683",
+      "referenceCode": "CIBUS-PAY-LRY8KG",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Bea Alcantara (Demo Commuter)",
+      "routeId": "route-cibus-main-nb",
+      "originStopId": "stop-il-corso",
+      "destinationStopId": "stop-it-park",
+      "busId": null,
+      "passengerCount": 1,
+      "unitFarePhp": 34,
+      "amountPhp": 34,
+      "paymentMethod": "GCASH",
+      "providerName": "PayMongo_Mock_Sandbox",
+      "providerTxId": "paymongo_mock_gcash_1793793801683",
+      "status": "PAID",
+      "verifiedViaCallback": true,
+      "createdAt": "2026-11-04T12:03:21.683Z",
+      "verifiedAt": "2026-11-04T12:03:21.683Z"
+    }
+  ],
+  "digitalTickets": [
+    {
+      "id": "tkt-sample-1",
+      "ticketReference": "CIBUS-TKT-GC8801",
+      "paymentId": "pay-sample-gcash-1",
+      "transactionReference": "CIBUS-PAY-GC8801",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Bea Alcantara (Demo Commuter)",
+      "routeId": "route-cibus-main-nb",
+      "originStopId": "stop-sm-seaside",
+      "destinationStopId": "stop-mcdonalds-osmena",
+      "passengerCount": 2,
+      "farePaidPhp": 38,
+      "paymentMethod": "GCASH",
+      "paymentStatus": "PAID",
+      "qrPayload": "{\"ticketRef\":\"CIBUS-TKT-GC8801\",\"txRef\":\"CIBUS-PAY-GC8801\",\"route\":\"CIBUS-01-NB\",\"pax\":2,\"amount\":38,\"method\":\"GCASH\",\"verifiedAt\":\"2026-11-04T11:43:04.612Z\"}",
+      "validationStatus": "VALID",
+      "validatedByUserId": null,
+      "validatedBusId": null,
+      "validatedAt": null,
+      "issuedAt": "2026-11-04T11:43:04.612Z"
+    },
+    {
+      "id": "tkt-sample-2",
+      "ticketReference": "CIBUS-TKT-MY9902",
+      "paymentId": "pay-sample-maya-2",
+      "transactionReference": "CIBUS-PAY-MY9902",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Bea Alcantara (Demo Commuter)",
+      "routeId": "route-cibus-main-nb",
+      "originStopId": "stop-il-corso",
+      "destinationStopId": "stop-it-park",
+      "passengerCount": 1,
+      "farePaidPhp": 33,
+      "paymentMethod": "MAYA",
+      "paymentStatus": "PAID",
+      "qrPayload": "{\"ticketRef\":\"CIBUS-TKT-MY9902\",\"txRef\":\"CIBUS-PAY-MY9902\",\"route\":\"CIBUS-01-NB\",\"pax\":1,\"amount\":33,\"method\":\"MAYA\",\"verifiedAt\":\"2026-11-04T11:43:04.612Z\"}",
+      "validationStatus": "VALIDATED_ON_BOARD",
+      "validatedByUserId": "user-conductor-1",
+      "validatedBusId": "bus-cibus-002",
+      "validatedAt": "2026-11-04T11:43:04.612Z",
+      "issuedAt": "2026-11-04T11:43:04.612Z"
+    },
+    {
+      "id": "tkt-1793793801683",
+      "ticketReference": "CIBUS-TKT-LRY8KG",
+      "paymentId": "pay-1793793801683",
+      "transactionReference": "CIBUS-PAY-LRY8KG",
+      "passengerId": "user-passenger-1",
+      "passengerName": "Bea Alcantara (Demo Commuter)",
+      "routeId": "route-cibus-main-nb",
+      "originStopId": "stop-il-corso",
+      "destinationStopId": "stop-it-park",
+      "passengerCount": 1,
+      "farePaidPhp": 34,
+      "paymentMethod": "GCASH",
+      "paymentStatus": "PAID",
+      "qrPayload": "{\"ticketRef\":\"CIBUS-TKT-LRY8KG\",\"txRef\":\"CIBUS-PAY-LRY8KG\",\"route\":\"CIBUS-01-NB\",\"pax\":1,\"amount\":34,\"method\":\"GCASH\",\"verifiedAt\":\"2026-11-04T12:03:21.683Z\"}",
+      "validationStatus": "VALID",
+      "validatedByUserId": null,
+      "validatedBusId": null,
+      "validatedAt": null,
+      "issuedAt": "2026-11-04T12:03:21.683Z"
+    }
+  ],
+  "notifications": []
+}

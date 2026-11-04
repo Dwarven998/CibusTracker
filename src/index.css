@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F4F7FB;
+    color: #102542;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Leaflet popup & control styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  padding: 2px !important;
+  box-shadow: 0 10px 25px -5px rgba(11, 37, 69, 0.18) !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+}
+
+.leaflet-container {
+  font-family: inherit !important;
+}
+
+/* Hide default Leaflet zoom when using custom overlay zoom controls */
+.cibus-clean-map .leaflet-control-zoom {
+  display: none !important;
+}
+
+/* Smooth horizontal scrolling for mobile tabs without visible scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
