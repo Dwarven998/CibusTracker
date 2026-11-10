@@ -1334,9 +1334,9 @@ export const PassengerDashboard: React.FC<PassengerDashboardProps> = ({
                 </div>
                 <p className="text-xs text-[#102542] leading-relaxed">
                   The southern launch corridor from <strong>Il Corso (SRP)</strong> through{' '}
-                  <strong>SM Seaside City, N. Bacalso Ave, Osmeña Blvd, DOH, and Cebu South Bus Terminal</strong> uses
+                  <strong>SM Seaside, Mambaling, N. Bacalso Ave, Cebu South Bus Terminal, and Osmeña Blvd</strong> uses
                   verified historical CIBUS launch stops (solid blue line). The northern extension via{' '}
-                  <strong>N. Escario Street and Lahug to Cebu IT Park</strong> is marked as a provisional segment
+                  <strong>the Capitol, N. Escario Street and Ayala Center Cebu to Cebu IT Park</strong> is marked as a provisional segment
                   (dashed line) configurable by dispatchers.
                 </p>
               </div>

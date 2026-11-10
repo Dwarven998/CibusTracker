@@ -55,10 +55,10 @@ async function runVerificationSuite() {
   const overviewData = await overviewRes.json();
   assert(overviewRes.status === 200, 'Transit Overview API returns 200 OK');
   assert(
-    overviewData.stops.length === 14 &&
-      overviewData.stops.filter((s: any) => s.verificationStatus === 'VERIFIED').length === 11 &&
-      overviewData.stops.filter((s: any) => s.verificationStatus === 'PROVISIONAL').length === 3,
-    'All 14 CIBUS corridor stops loaded (11 Verified Historical Launch stops + 3 Provisional Northern extension stops)'
+    overviewData.stops.length === 13 &&
+      overviewData.stops.filter((s: any) => s.verificationStatus === 'VERIFIED').length === 9 &&
+      overviewData.stops.filter((s: any) => s.verificationStatus === 'PROVISIONAL').length === 4,
+    'All 13 CIBUS corridor stops loaded (9 Verified southern corridor stops + 4 Provisional Northern extension stops)'
   );
   assert(
     overviewData.buses.every((b: any) => b.lastGpsUpdateAt === null && b.gpsSource === 'NONE'),
@@ -181,7 +181,7 @@ async function runVerificationSuite() {
     'Waiting request with reverse stop sequence on Southbound route rejected (Rule 1)'
   );
 
-  // 6b. Submit valid waiting request for 3 passengers at McDonald's (Osmeña Boulevard) BRT Stop
+  // 6b. Submit valid waiting request for 3 passengers at Fuente Osmeña Circle BRT Stop
   const validWaitRes = await fetch(`${baseUrl}/api/waiting`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${paxAuth.token}` },
@@ -195,7 +195,7 @@ async function runVerificationSuite() {
   const validWaitData = await validWaitRes.json();
   assert(
     validWaitRes.status === 201 && validWaitData.request.passengerCount === 3,
-    "Passenger submitted waiting request for 3 commuters at McDonald's (Osmeña Boulevard) stop"
+    "Passenger submitted waiting request for 3 commuters at Fuente Osmeña Circle stop"
   );
 
   // 6c. Prevent duplicate active waiting request at same route & stop
@@ -219,7 +219,7 @@ async function runVerificationSuite() {
   const fuenteDemandSb = drv1Dash.upcomingStops.find((s: any) => s.stopId === 'stop-mcdonalds-osmena');
   assert(
     fuenteDemandSb && fuenteDemandSb.expectedPassengers === 3 && fuenteDemandSb.registeredRequestCount === 1,
-    "Driver 1 (Southbound) sees 3 expected passengers (1 request) at McDonald's (Osmeña Boulevard)"
+    "Driver 1 (Southbound) sees 3 expected passengers (1 request) at Fuente Osmeña Circle"
   );
 
   const drv2DashRes = await fetch(`${baseUrl}/api/driver/dashboard?busId=bus-cibus-002`, {
@@ -360,7 +360,7 @@ async function runVerificationSuite() {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       routeId: 'route-cibus-main-nb',
-      boardingStopId: 'stop-gaisano-jai-alai',
+      boardingStopId: 'stop-mambaling',
       destinationStopId: 'stop-it-park',
       passengerCount: 2,
       demoPassengerName: 'Dry-Run Guest Commuter',

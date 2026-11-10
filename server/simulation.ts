@@ -61,9 +61,9 @@ class DryRunSimulationEngine {
   public resetPositions(): void {
     const now = new Date().toISOString();
     const presets = [
-      { routeId: 'route-cibus-main-nb', dir: 'NORTHBOUND' as const, segIdx: 1, seats: 15 },
-      { routeId: 'route-cibus-main-nb', dir: 'NORTHBOUND' as const, segIdx: 8, seats: 24 },
-      { routeId: 'route-cibus-main-sb', dir: 'SOUTHBOUND' as const, segIdx: 6, seats: 18 },
+      { routeId: 'route-cibus-main-nb', dir: 'NORTHBOUND' as const, segIdx: 7, seats: 15 },
+      { routeId: 'route-cibus-main-nb', dir: 'NORTHBOUND' as const, segIdx: 62, seats: 24 },
+      { routeId: 'route-cibus-main-sb', dir: 'SOUTHBOUND' as const, segIdx: 35, seats: 18 },
     ];
 
     db.state.buses.forEach((bus, idx) => {
@@ -234,7 +234,7 @@ class DryRunSimulationEngine {
             s.isActive &&
             routeStopIds.has(s.id) &&
             s.id !== cursor!.lastVisitedStopId &&
-            haversineDistanceKm(reachedPt[0], reachedPt[1], s.latitude, s.longitude) <= 0.08
+            haversineDistanceKm(reachedPt[0], reachedPt[1], s.latitude, s.longitude) <= 0.03
         );
 
         if (nearbyStop) {

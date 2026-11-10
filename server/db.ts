@@ -252,8 +252,8 @@ function createInitialSeed(defaultOperatingMode: 'DRY_RUN' | 'LIVE' = 'DRY_RUN')
       currentDirection: 'NORTHBOUND',
       operationalStatus: isDryRun ? 'IN_SERVICE' : 'NOT_OPERATING',
       nextStopId: 'stop-sm-seaside',
-      lastLat: 10.2712,
-      lastLng: 123.8768,
+      lastLat: 10.27185,
+      lastLng: 123.87945,
       lastHeading: 25,
       lastSpeedKmh: isDryRun ? 26 : 0,
       lastGpsUpdateAt: isDryRun ? now : null,
@@ -261,7 +261,7 @@ function createInitialSeed(defaultOperatingMode: 'DRY_RUN' | 'LIVE' = 'DRY_RUN')
       isDemoData: isDryRun,
       simulationStatus: isDryRun ? 'MOVING' : 'INACTIVE',
       dwellRemainingSeconds: 0,
-      currentSegmentIndex: 1,
+      currentSegmentIndex: 7,
       routeProgressPct: 8,
     },
     {
@@ -278,8 +278,8 @@ function createInitialSeed(defaultOperatingMode: 'DRY_RUN' | 'LIVE' = 'DRY_RUN')
       currentDirection: 'NORTHBOUND',
       operationalStatus: isDryRun ? 'IN_SERVICE' : 'NOT_OPERATING',
       nextStopId: 'stop-csbt-brt',
-      lastLat: 10.2959,
-      lastLng: 123.8891,
+      lastLat: 10.29732,
+      lastLng: 123.88966,
       lastHeading: 45,
       lastSpeedKmh: isDryRun ? 22 : 0,
       lastGpsUpdateAt: isDryRun ? now : null,
@@ -287,7 +287,7 @@ function createInitialSeed(defaultOperatingMode: 'DRY_RUN' | 'LIVE' = 'DRY_RUN')
       isDemoData: isDryRun,
       simulationStatus: isDryRun ? 'MOVING' : 'INACTIVE',
       dwellRemainingSeconds: 0,
-      currentSegmentIndex: 8,
+      currentSegmentIndex: 62,
       routeProgressPct: 38,
     },
     {
@@ -304,8 +304,8 @@ function createInitialSeed(defaultOperatingMode: 'DRY_RUN' | 'LIVE' = 'DRY_RUN')
       currentDirection: 'SOUTHBOUND',
       operationalStatus: isDryRun ? 'IN_SERVICE' : 'OFFLINE',
       nextStopId: 'stop-mcdonalds-osmena',
-      lastLat: 10.3168,
-      lastLng: 123.8942,
+      lastLat: 10.3175,
+      lastLng: 123.89459,
       lastHeading: 195,
       lastSpeedKmh: isDryRun ? 24 : 0,
       lastGpsUpdateAt: isDryRun ? now : null,
@@ -313,7 +313,7 @@ function createInitialSeed(defaultOperatingMode: 'DRY_RUN' | 'LIVE' = 'DRY_RUN')
       isDemoData: isDryRun,
       simulationStatus: isDryRun ? 'MOVING' : 'INACTIVE',
       dwellRemainingSeconds: 0,
-      currentSegmentIndex: 6,
+      currentSegmentIndex: 35,
       routeProgressPct: 25,
     },
   ];
@@ -425,7 +425,7 @@ function createInitialSeed(defaultOperatingMode: 'DRY_RUN' | 'LIVE' = 'DRY_RUN')
           passengerName: 'Sample Commuter Group C (Demo)',
           routeId: 'route-cibus-main-nb',
           direction: 'NORTHBOUND',
-          boardingStopId: 'stop-doh-office',
+          boardingStopId: 'stop-central-bank',
           destinationStopId: 'stop-it-park',
           targetBusId: 'bus-cibus-001',
           tripId: null,
@@ -651,12 +651,12 @@ class RelationalStore {
       if (fs.existsSync(DB_FILE_PATH)) {
         const raw = fs.readFileSync(DB_FILE_PATH, 'utf-8');
         const parsed = JSON.parse(raw) as DatabaseState;
-        // Upgrade schema if older version without simulationSettings, 14 historical stops, or pre-seeded sample tickets
+        // Upgrade schema if older version without simulationSettings, the current stop list, or pre-seeded sample tickets
         if (
           parsed &&
           parsed.simulationSettings &&
           Array.isArray(parsed.busStops) &&
-          parsed.busStops.length >= 14 &&
+          parsed.busStops.some((s) => s.id === 'stop-ayala-center') &&
           Array.isArray(parsed.digitalTickets) &&
           parsed.digitalTickets.length > 0
         ) {
