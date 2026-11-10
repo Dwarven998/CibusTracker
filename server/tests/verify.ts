@@ -181,7 +181,7 @@ async function runVerificationSuite() {
     'Waiting request with reverse stop sequence on Southbound route rejected (Rule 1)'
   );
 
-  // 6b. Submit valid waiting request for 3 passengers at Fuente Osmeña Circle BRT Stop
+  // 6b. Submit valid waiting request for 3 passengers at Fuente BRT Station BRT Stop
   const validWaitRes = await fetch(`${baseUrl}/api/waiting`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${paxAuth.token}` },
@@ -195,7 +195,7 @@ async function runVerificationSuite() {
   const validWaitData = await validWaitRes.json();
   assert(
     validWaitRes.status === 201 && validWaitData.request.passengerCount === 3,
-    "Passenger submitted waiting request for 3 commuters at Fuente Osmeña Circle stop"
+    "Passenger submitted waiting request for 3 commuters at Fuente BRT Station stop"
   );
 
   // 6c. Prevent duplicate active waiting request at same route & stop
@@ -219,7 +219,7 @@ async function runVerificationSuite() {
   const fuenteDemandSb = drv1Dash.upcomingStops.find((s: any) => s.stopId === 'stop-mcdonalds-osmena');
   assert(
     fuenteDemandSb && fuenteDemandSb.expectedPassengers === 3 && fuenteDemandSb.registeredRequestCount === 1,
-    "Driver 1 (Southbound) sees 3 expected passengers (1 request) at Fuente Osmeña Circle"
+    "Driver 1 (Southbound) sees 3 expected passengers (1 request) at Fuente BRT Station"
   );
 
   const drv2DashRes = await fetch(`${baseUrl}/api/driver/dashboard?busId=bus-cibus-002`, {

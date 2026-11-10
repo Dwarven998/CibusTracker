@@ -14,21 +14,21 @@
       "id": "user-admin-1",
       "email": "admin@cibuscebu.ph",
       "phone": "+639171000001",
-      "passwordHash": "$2a$10$3nWGSx5Qklzf0b.sSHcikuqrm2axi3TLBxUyn6AE6eN7/T7SP8QBq",
+      "passwordHash": "$2a$10$oXt7G6PjBRu4d7rpV.Ojreh4OsrE8Tu83o8KUqBh/NCAC/3HLqaLm",
       "fullName": "Engr. Marco Villamor (CIBUS Dispatcher)",
       "role": "ADMIN",
       "status": "ACTIVE",
-      "createdAt": "2026-11-10T15:53:26.780Z"
+      "createdAt": "2026-11-10T16:13:41.978Z"
     },
     {
       "id": "user-driver-1",
       "email": "driver1@cibuscebu.ph",
       "phone": "+639171000002",
-      "passwordHash": "$2a$10$3nWGSx5Qklzf0b.sSHcikuqrm2axi3TLBxUyn6AE6eN7/T7SP8QBq",
+      "passwordHash": "$2a$10$oXt7G6PjBRu4d7rpV.Ojreh4OsrE8Tu83o8KUqBh/NCAC/3HLqaLm",
       "fullName": "Rodelio Cañete (Demo Driver - CIBUS-001)",
       "role": "DRIVER",
       "status": "ACTIVE",
-      "createdAt": "2026-11-10T15:53:26.780Z",
+      "createdAt": "2026-11-10T16:13:41.978Z",
       "assignedBusId": "bus-cibus-001",
       "licenseNumber": "G01-19-004821"
     },
@@ -36,11 +36,11 @@
       "id": "user-conductor-1",
       "email": "conductor1@cibuscebu.ph",
       "phone": "+639171000003",
-      "passwordHash": "$2a$10$3nWGSx5Qklzf0b.sSHcikuqrm2axi3TLBxUyn6AE6eN7/T7SP8QBq",
+      "passwordHash": "$2a$10$oXt7G6PjBRu4d7rpV.Ojreh4OsrE8Tu83o8KUqBh/NCAC/3HLqaLm",
       "fullName": "Jomar Bacalso (Demo Conductor - CIBUS-001)",
       "role": "CONDUCTOR",
       "status": "ACTIVE",
-      "createdAt": "2026-11-10T15:53:26.780Z",
+      "createdAt": "2026-11-10T16:13:41.978Z",
       "assignedBusId": "bus-cibus-001",
       "employeeCode": "COND-CEB-001"
     },
@@ -48,11 +48,11 @@
       "id": "user-driver-2",
       "email": "driver2@cibuscebu.ph",
       "phone": "+639171000004",
-      "passwordHash": "$2a$10$3nWGSx5Qklzf0b.sSHcikuqrm2axi3TLBxUyn6AE6eN7/T7SP8QBq",
+      "passwordHash": "$2a$10$oXt7G6PjBRu4d7rpV.Ojreh4OsrE8Tu83o8KUqBh/NCAC/3HLqaLm",
       "fullName": "Arnel Osmeña (Demo Driver - CIBUS-002)",
       "role": "DRIVER",
       "status": "ACTIVE",
-      "createdAt": "2026-11-10T15:53:26.780Z",
+      "createdAt": "2026-11-10T16:13:41.978Z",
       "assignedBusId": "bus-cibus-002",
       "licenseNumber": "G01-18-009123"
     },
@@ -60,11 +60,11 @@
       "id": "user-passenger-1",
       "email": "commuter@cebu.ph",
       "phone": "+639171000010",
-      "passwordHash": "$2a$10$3nWGSx5Qklzf0b.sSHcikuqrm2axi3TLBxUyn6AE6eN7/T7SP8QBq",
+      "passwordHash": "$2a$10$oXt7G6PjBRu4d7rpV.Ojreh4OsrE8Tu83o8KUqBh/NCAC/3HLqaLm",
       "fullName": "Bea Alcantara (Demo Commuter)",
       "role": "PASSENGER",
       "status": "ACTIVE",
-      "createdAt": "2026-11-10T15:53:26.780Z",
+      "createdAt": "2026-11-10T16:13:41.978Z",
       "discountType": "REGULAR"
     }
   ],
@@ -301,8 +301,8 @@
               123.87786
             ],
             [
-              10.29139,
-              123.87777
+              10.29109,
+              123.87732
             ],
             [
               10.29226,
@@ -393,20 +393,8 @@
               123.89428
             ],
             [
-              10.30904,
-              123.89354
-            ],
-            [
-              10.30922,
-              123.89352
-            ],
-            [
-              10.30958,
-              123.89377
-            ],
-            [
-              10.30986,
-              123.89382
+              10.30877,
+              123.89363
             ]
           ]
         },
@@ -417,7 +405,27 @@
           "dataSource": "PROVISIONAL_CORRIDOR",
           "coordinates": [
             [
-              10.30986,
+              10.30877,
+              123.89363
+            ],
+            [
+              10.30916,
+              123.89351
+            ],
+            [
+              10.30934,
+              123.89357
+            ],
+            [
+              10.30949,
+              123.89372
+            ],
+            [
+              10.30968,
+              123.8938
+            ],
+            [
+              10.30994,
               123.89382
             ],
             [
@@ -425,12 +433,12 @@
               123.89378
             ],
             [
-              10.31032,
-              123.89364
+              10.31039,
+              123.89356
             ],
             [
-              10.31044,
-              123.89346
+              10.31049,
+              123.89336
             ],
             [
               10.31057,
@@ -802,20 +810,40 @@
               123.89303
             ],
             [
-              10.31044,
-              123.89346
+              10.31049,
+              123.89336
             ],
             [
-              10.31032,
-              123.89364
+              10.31039,
+              123.89356
             ],
             [
               10.3101,
               123.89378
             ],
             [
-              10.30986,
+              10.30994,
               123.89382
+            ],
+            [
+              10.30968,
+              123.8938
+            ],
+            [
+              10.30949,
+              123.89372
+            ],
+            [
+              10.30934,
+              123.89357
+            ],
+            [
+              10.30916,
+              123.89351
+            ],
+            [
+              10.30877,
+              123.89363
             ]
           ]
         },
@@ -826,20 +854,8 @@
           "dataSource": "ROAD_FOLLOWING_OSM",
           "coordinates": [
             [
-              10.30986,
-              123.89382
-            ],
-            [
-              10.30958,
-              123.89377
-            ],
-            [
-              10.30922,
-              123.89352
-            ],
-            [
-              10.30904,
-              123.89354
+              10.30877,
+              123.89363
             ],
             [
               10.30683,
@@ -930,8 +946,8 @@
               123.87898
             ],
             [
-              10.29139,
-              123.87777
+              10.29109,
+              123.87732
             ],
             [
               10.29031,
@@ -1252,14 +1268,14 @@
     {
       "id": "stop-mcdonalds-osmena",
       "stopCode": "CIBUS-BRT-09",
-      "stopName": "Fuente Osmeña Circle",
-      "latitude": 10.30986,
-      "longitude": 123.89382,
+      "stopName": "Fuente BRT Station",
+      "latitude": 10.30877,
+      "longitude": 123.89363,
       "stopType": "AUTHORIZED_BRT_LANE",
       "verificationStatus": "VERIFIED",
       "isVerifiedCibus": true,
       "isActive": true,
-      "landmarkNotes": "CIBUS stop at Fuente Osmeña Circle, Osmeña Boulevard"
+      "landmarkNotes": "CIBUS stop at Fuente BRT Station, Osmeña Boulevard, just south of Fuente Osmeña Circle"
     },
     {
       "id": "stop-escario-capitol",
@@ -1389,7 +1405,7 @@
       "stopId": "stop-mcdonalds-osmena",
       "direction": "NORTHBOUND",
       "stopSequence": 9,
-      "distanceFromOriginKm": 7.96,
+      "distanceFromOriginKm": 7.82,
       "estimatedMinutesFromOrigin": 32
     },
     {
@@ -1470,7 +1486,7 @@
       "stopId": "stop-mcdonalds-osmena",
       "direction": "SOUTHBOUND",
       "stopSequence": 5,
-      "distanceFromOriginKm": 4.89,
+      "distanceFromOriginKm": 5.03,
       "estimatedMinutesFromOrigin": 16
     },
     {
@@ -1556,7 +1572,7 @@
       "availableSeats": 15,
       "occupiedSeats": 25,
       "seatSource": "SIMULATED_SAMPLE",
-      "lastSeatUpdateAt": "2026-11-10T15:53:26.780Z",
+      "lastSeatUpdateAt": "2026-11-10T16:13:41.978Z",
       "assignedRouteId": "route-cibus-main-nb",
       "currentDirection": "NORTHBOUND",
       "operationalStatus": "IN_SERVICE",
@@ -1565,7 +1581,7 @@
       "lastLng": 123.87945,
       "lastHeading": 25,
       "lastSpeedKmh": 26,
-      "lastGpsUpdateAt": "2026-11-10T15:53:26.780Z",
+      "lastGpsUpdateAt": "2026-11-10T16:13:41.978Z",
       "gpsSource": "DEMO_MODE",
       "isDemoData": true,
       "simulationStatus": "MOVING",
@@ -1582,7 +1598,7 @@
       "availableSeats": 24,
       "occupiedSeats": 16,
       "seatSource": "SIMULATED_SAMPLE",
-      "lastSeatUpdateAt": "2026-11-10T15:53:26.780Z",
+      "lastSeatUpdateAt": "2026-11-10T16:13:41.978Z",
       "assignedRouteId": "route-cibus-main-nb",
       "currentDirection": "NORTHBOUND",
       "operationalStatus": "IN_SERVICE",
@@ -1591,7 +1607,7 @@
       "lastLng": 123.88966,
       "lastHeading": 45,
       "lastSpeedKmh": 22,
-      "lastGpsUpdateAt": "2026-11-10T15:53:26.780Z",
+      "lastGpsUpdateAt": "2026-11-10T16:13:41.978Z",
       "gpsSource": "DEMO_MODE",
       "isDemoData": true,
       "simulationStatus": "MOVING",
@@ -1608,7 +1624,7 @@
       "availableSeats": 18,
       "occupiedSeats": 27,
       "seatSource": "SIMULATED_SAMPLE",
-      "lastSeatUpdateAt": "2026-11-10T15:53:26.780Z",
+      "lastSeatUpdateAt": "2026-11-10T16:13:41.978Z",
       "assignedRouteId": "route-cibus-main-sb",
       "currentDirection": "SOUTHBOUND",
       "operationalStatus": "IN_SERVICE",
@@ -1617,7 +1633,7 @@
       "lastLng": 123.89459,
       "lastHeading": 195,
       "lastSpeedKmh": 24,
-      "lastGpsUpdateAt": "2026-11-10T15:53:26.780Z",
+      "lastGpsUpdateAt": "2026-11-10T16:13:41.978Z",
       "gpsSource": "DEMO_MODE",
       "isDemoData": true,
       "simulationStatus": "MOVING",
@@ -1644,9 +1660,9 @@
       "status": "WAITING",
       "isSampleData": true,
       "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
-      "createdAt": "2026-11-10T15:53:26.780Z",
-      "updatedAt": "2026-11-10T15:53:26.780Z",
-      "expiresAt": "2026-11-10T17:53:26.839Z"
+      "createdAt": "2026-11-10T16:13:41.978Z",
+      "updatedAt": "2026-11-10T16:13:41.978Z",
+      "expiresAt": "2026-11-10T18:13:42.039Z"
     },
     {
       "id": "wait-sample-2",
@@ -1662,9 +1678,9 @@
       "status": "WAITING",
       "isSampleData": true,
       "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
-      "createdAt": "2026-11-10T15:53:26.780Z",
-      "updatedAt": "2026-11-10T15:53:26.780Z",
-      "expiresAt": "2026-11-10T17:53:26.839Z"
+      "createdAt": "2026-11-10T16:13:41.978Z",
+      "updatedAt": "2026-11-10T16:13:41.978Z",
+      "expiresAt": "2026-11-10T18:13:42.039Z"
     },
     {
       "id": "wait-sample-3",
@@ -1680,9 +1696,9 @@
       "status": "WAITING",
       "isSampleData": true,
       "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
-      "createdAt": "2026-11-10T15:53:26.780Z",
-      "updatedAt": "2026-11-10T15:53:26.780Z",
-      "expiresAt": "2026-11-10T17:53:26.839Z"
+      "createdAt": "2026-11-10T16:13:41.978Z",
+      "updatedAt": "2026-11-10T16:13:41.978Z",
+      "expiresAt": "2026-11-10T18:13:42.039Z"
     },
     {
       "id": "wait-sample-4",
@@ -1698,9 +1714,9 @@
       "status": "WAITING",
       "isSampleData": true,
       "notes": "DEMO MODE – SAMPLE WAITING REQUEST",
-      "createdAt": "2026-11-10T15:53:26.780Z",
-      "updatedAt": "2026-11-10T15:53:26.780Z",
-      "expiresAt": "2026-11-10T17:53:26.839Z"
+      "createdAt": "2026-11-10T16:13:41.978Z",
+      "updatedAt": "2026-11-10T16:13:41.978Z",
+      "expiresAt": "2026-11-10T18:13:42.039Z"
     }
   ],
   "boardingRecords": [
@@ -1716,7 +1732,7 @@
       "actualBoardedCount": 7,
       "alightedCount": 0,
       "resolvedRequestIds": [],
-      "createdAt": "2026-11-10T15:53:26.780Z"
+      "createdAt": "2026-11-10T16:13:41.978Z"
     },
     {
       "id": "brd-sample-2",
@@ -1730,7 +1746,7 @@
       "actualBoardedCount": 8,
       "alightedCount": 2,
       "resolvedRequestIds": [],
-      "createdAt": "2026-11-10T15:53:26.780Z"
+      "createdAt": "2026-11-10T16:13:41.978Z"
     }
   ],
   "fareConfigurations": [
@@ -1809,7 +1825,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-il-corso",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 7.96,
+      "distanceKm": 7.82,
       "regularFarePhp": 24,
       "discountedFarePhp": 19,
       "isActive": true
@@ -1919,7 +1935,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-sm-seaside",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 5.86,
+      "distanceKm": 5.72,
       "regularFarePhp": 19,
       "discountedFarePhp": 15,
       "isActive": true
@@ -2019,9 +2035,9 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-mambaling",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 4.33,
-      "regularFarePhp": 16,
-      "discountedFarePhp": 13,
+      "distanceKm": 4.19,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
       "isActive": true
     },
     {
@@ -2109,7 +2125,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-ccmc",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 2.1,
+      "distanceKm": 1.96,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2189,7 +2205,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-csbt-brt",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 1.94,
+      "distanceKm": 1.8,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2259,7 +2275,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-citymall-bacalso",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 1.78,
+      "distanceKm": 1.64,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2319,7 +2335,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-emall",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 1.66,
+      "distanceKm": 1.52,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2369,7 +2385,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-central-bank",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 1.35,
+      "distanceKm": 1.21,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2419,7 +2435,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-escario-capitol",
-      "distanceKm": 0.96,
+      "distanceKm": 1.1,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2429,7 +2445,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-parklane",
-      "distanceKm": 2.72,
+      "distanceKm": 2.86,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2439,7 +2455,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-ayala-center",
-      "distanceKm": 3.08,
+      "distanceKm": 3.22,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2449,7 +2465,7 @@
       "routeId": "route-cibus-main-nb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-it-park",
-      "distanceKm": 4.89,
+      "distanceKm": 5.03,
       "regularFarePhp": 17,
       "discountedFarePhp": 14,
       "isActive": true
@@ -2549,7 +2565,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-it-park",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 4.89,
+      "distanceKm": 5.03,
       "regularFarePhp": 17,
       "discountedFarePhp": 14,
       "isActive": true
@@ -2659,7 +2675,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-ayala-center",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 3.08,
+      "distanceKm": 3.22,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2759,7 +2775,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-parklane",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 2.72,
+      "distanceKm": 2.86,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2849,7 +2865,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-escario-capitol",
       "toStopId": "stop-mcdonalds-osmena",
-      "distanceKm": 0.96,
+      "distanceKm": 1.1,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2939,7 +2955,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-central-bank",
-      "distanceKm": 1.35,
+      "distanceKm": 1.21,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2949,7 +2965,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-emall",
-      "distanceKm": 1.66,
+      "distanceKm": 1.52,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2959,7 +2975,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-citymall-bacalso",
-      "distanceKm": 1.78,
+      "distanceKm": 1.64,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2969,7 +2985,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-csbt-brt",
-      "distanceKm": 1.94,
+      "distanceKm": 1.8,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2979,7 +2995,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-ccmc",
-      "distanceKm": 2.1,
+      "distanceKm": 1.96,
       "regularFarePhp": 15,
       "discountedFarePhp": 12,
       "isActive": true
@@ -2989,9 +3005,9 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-mambaling",
-      "distanceKm": 4.32,
-      "regularFarePhp": 16,
-      "discountedFarePhp": 13,
+      "distanceKm": 4.18,
+      "regularFarePhp": 15,
+      "discountedFarePhp": 12,
       "isActive": true
     },
     {
@@ -2999,7 +3015,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-sm-seaside",
-      "distanceKm": 5.85,
+      "distanceKm": 5.71,
       "regularFarePhp": 19,
       "discountedFarePhp": 15,
       "isActive": true
@@ -3009,7 +3025,7 @@
       "routeId": "route-cibus-main-sb",
       "fromStopId": "stop-mcdonalds-osmena",
       "toStopId": "stop-il-corso",
-      "distanceKm": 7.95,
+      "distanceKm": 7.81,
       "regularFarePhp": 24,
       "discountedFarePhp": 19,
       "isActive": true
@@ -3313,8 +3329,8 @@
       "providerTxId": "paymongo_src_gcash_demo_8801",
       "status": "PAID",
       "verifiedViaCallback": true,
-      "createdAt": "2026-11-10T15:53:26.780Z",
-      "verifiedAt": "2026-11-10T15:53:26.780Z"
+      "createdAt": "2026-11-10T16:13:41.978Z",
+      "verifiedAt": "2026-11-10T16:13:41.978Z"
     },
     {
       "id": "pay-sample-maya-2",
@@ -3333,8 +3349,8 @@
       "providerTxId": "paymongo_src_maya_demo_9902",
       "status": "PAID",
       "verifiedViaCallback": true,
-      "createdAt": "2026-11-10T15:53:26.780Z",
-      "verifiedAt": "2026-11-10T15:53:26.780Z"
+      "createdAt": "2026-11-10T16:13:41.978Z",
+      "verifiedAt": "2026-11-10T16:13:41.978Z"
     },
     {
       "id": "pay-sample-qrph-3",
@@ -3353,7 +3369,7 @@
       "providerTxId": "paymongo_src_qrph_demo_7703",
       "status": "PENDING",
       "verifiedViaCallback": false,
-      "createdAt": "2026-11-10T15:53:26.780Z",
+      "createdAt": "2026-11-10T16:13:41.978Z",
       "verifiedAt": null
     }
   ],
@@ -3372,12 +3388,12 @@
       "farePaidPhp": 38,
       "paymentMethod": "GCASH",
       "paymentStatus": "PAID",
-      "qrPayload": "{\"ticketRef\":\"CIBUS-TKT-GC8801\",\"txRef\":\"CIBUS-PAY-GC8801\",\"route\":\"CIBUS-01-NB\",\"pax\":2,\"amount\":38,\"method\":\"GCASH\",\"verifiedAt\":\"2026-11-10T15:53:26.780Z\"}",
+      "qrPayload": "{\"ticketRef\":\"CIBUS-TKT-GC8801\",\"txRef\":\"CIBUS-PAY-GC8801\",\"route\":\"CIBUS-01-NB\",\"pax\":2,\"amount\":38,\"method\":\"GCASH\",\"verifiedAt\":\"2026-11-10T16:13:41.978Z\"}",
       "validationStatus": "VALID",
       "validatedByUserId": null,
       "validatedBusId": null,
       "validatedAt": null,
-      "issuedAt": "2026-11-10T15:53:26.780Z"
+      "issuedAt": "2026-11-10T16:13:41.978Z"
     },
     {
       "id": "tkt-sample-2",
@@ -3393,12 +3409,12 @@
       "farePaidPhp": 33,
       "paymentMethod": "MAYA",
       "paymentStatus": "PAID",
-      "qrPayload": "{\"ticketRef\":\"CIBUS-TKT-MY9902\",\"txRef\":\"CIBUS-PAY-MY9902\",\"route\":\"CIBUS-01-NB\",\"pax\":1,\"amount\":33,\"method\":\"MAYA\",\"verifiedAt\":\"2026-11-10T15:53:26.780Z\"}",
+      "qrPayload": "{\"ticketRef\":\"CIBUS-TKT-MY9902\",\"txRef\":\"CIBUS-PAY-MY9902\",\"route\":\"CIBUS-01-NB\",\"pax\":1,\"amount\":33,\"method\":\"MAYA\",\"verifiedAt\":\"2026-11-10T16:13:41.978Z\"}",
       "validationStatus": "VALIDATED_ON_BOARD",
       "validatedByUserId": "user-conductor-1",
       "validatedBusId": "bus-cibus-002",
-      "validatedAt": "2026-11-10T15:53:26.780Z",
-      "issuedAt": "2026-11-10T15:53:26.780Z"
+      "validatedAt": "2026-11-10T16:13:41.978Z",
+      "issuedAt": "2026-11-10T16:13:41.978Z"
     }
   ],
   "notifications": []
