@@ -1,5 +1,8 @@
-import React, { createContext, useContext, useEffect, useState, useCallback } from 'react';
+import React, { createContext, useContext, useEffect, useState, useCallback, useRef } from 'react';
 import { Bus, BusRoute, BusStop, PassengerWaitingRequest, SimulationSettings } from '../types/cibus';
+import { clientStandaloneEngine, installStandaloneApiInterceptor } from '../services/clientStandaloneEngine';
+
+installStandaloneApiInterceptor();
 
 export interface EnrichedStopWithEta extends BusStop {
   expectedWaitingPassengers: number;
@@ -35,27 +38,33 @@ interface RealtimeContextValue {
   resetSimulation: () => Promise<void>;
 }
 
-const defaultSimSettings: SimulationSettings = {
-  operatingMode: 'DRY_RUN',
-  enabled: true,
-  speedMultiplier: 1.5,
-  stopDurationSeconds: 6,
-  busCount: 3,
-  autoReturn: true,
-  updateIntervalMs: 1500,
-  liveSourceConfigured: false,
-};
+const initialOverview = clientStandaloneEngine.getOverviewPayload();
 
 const RealtimeContext = createContext<RealtimeContextValue | undefined>(undefined);
 
 export const RealtimeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [simulationSettings, setSimulationSettings] = useState<SimulationSettings>(defaultSimSettings);
-  const [buses, setBuses] = useState<Bus[]>([]);
-  const [routes, setRoutes] = useState<BusRoute[]>([]);
-  const [stops, setStops] = useState<EnrichedStopWithEta[]>([]);
-  const [waitingRequests, setWaitingRequests] = useState<PassengerWaitingRequest[]>([]);
-  const [wsConnected, setWsConnected] = useState<boolean>(false);
-  const [lastEventTimestamp, setLastEventTimestamp] = useState<string | null>(null);
+  const [simulationSettings, setSimulationSettings] = useState<SimulationSettings>(
+    initialOverview.simulationSettings
+  );
+  const [buses, setBuses] = useState<Bus[]>(initialOverview.buses);
+  const [routes, setRoutes] = useState<BusRoute[]>(initialOverview.routes);
+  const [stops, setStops] = useState<EnrichedStopWithEta[]>(initialOverview.stops);
+  const [waitingRequests, setWaitingRequests] = useState<PassengerWaitingRequest[]>(
+    initialOverview.waitingRequests
+  );
+  const [wsConnected, setWsConnected] = useState<boolean>(true);
+  const [lastEventTimestamp, setLastEventTimestamp] = useState<string | null>(initialOverview.serverTimestamp);
+  const hasRealBackendWsRef = useRef<boolean>(false);
+
+  const syncFromStandaloneEngine = useCallback(() => {
+    const snap = clientStandaloneEngine.getOverviewPayload();
+    setSimulationSettings({ ...snap.simulationSettings });
+    setBuses([...snap.buses]);
+    setRoutes([...snap.routes]);
+    setStops([...snap.stops]);
+    setWaitingRequests([...snap.waitingRequests]);
+    setLastEventTimestamp(snap.serverTimestamp);
+  }, []);
 
   const refreshTransitOverview = useCallback(async () => {
     try {
@@ -68,10 +77,10 @@ export const RealtimeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         setStops(data.stops || []);
         setWaitingRequests(data.waitingRequests || []);
       }
-    } catch (err) {
-      console.error('Failed to fetch transit overview:', err);
+    } catch {
+      syncFromStandaloneEngine();
     }
-  }, []);
+  }, [syncFromStandaloneEngine]);
 
   const updateSimulationSettings = useCallback(
     async (updates: Partial<SimulationSettings>) => {
@@ -86,11 +95,15 @@ export const RealtimeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           if (data.settings) setSimulationSettings(data.settings);
           await refreshTransitOverview();
         }
-      } catch (err) {
-        console.error('Failed to update simulation settings:', err);
+      } catch {
+        clientStandaloneEngine.state.simulationSettings = {
+          ...clientStandaloneEngine.state.simulationSettings,
+          ...updates,
+        };
+        syncFromStandaloneEngine();
       }
     },
-    [refreshTransitOverview]
+    [refreshTransitOverview, syncFromStandaloneEngine]
   );
 
   const resetSimulation = useCallback(async () => {
@@ -99,44 +112,77 @@ export const RealtimeProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       if (res.ok) {
         await refreshTransitOverview();
       }
-    } catch (err) {
-      console.error('Failed to reset simulation:', err);
+    } catch {
+      clientStandaloneEngine.resetToDryRunSeed();
+      syncFromStandaloneEngine();
     }
-  }, [refreshTransitOverview]);
+  }, [refreshTransitOverview, syncFromStandaloneEngine]);
 
+  // Subscribe to clientStandaloneEngine updates
+  useEffect(() => {
+    return clientStandaloneEngine.subscribe(() => {
+      if (!hasRealBackendWsRef.current) {
+        syncFromStandaloneEngine();
+      }
+    });
+  }, [syncFromStandaloneEngine]);
+
+  // Client-side autonomous bus movement timer when deployed on Vercel (or whenever WebSocket server isn't active)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!hasRealBackendWsRef.current) {
+        clientStandaloneEngine.tick();
+      }
+    }, 1200);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Connect to local Express WebSocket when running `npm run dev` locally
   useEffect(() => {
     refreshTransitOverview();
 
     let ws: WebSocket | null = null;
     let reconnectTimer: ReturnType<typeof setTimeout> | null = null;
+    let attempts = 0;
 
     const connectWs = () => {
-      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-      const wsUrl = `${protocol}//${window.location.host}/ws`;
-      ws = new WebSocket(wsUrl);
+      try {
+        const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+        const wsUrl = `${protocol}//${window.location.host}/ws`;
+        ws = new WebSocket(wsUrl);
 
-      ws.onopen = () => {
-        setWsConnected(true);
-      };
+        ws.onopen = () => {
+          hasRealBackendWsRef.current = true;
+          setWsConnected(true);
+          attempts = 0;
+        };
 
-      ws.onmessage = (event) => {
-        try {
-          const payload = JSON.parse(event.data);
-          setLastEventTimestamp(payload.timestamp || new Date().toISOString());
-          refreshTransitOverview();
-        } catch (e) {
-          console.error('WS parse error:', e);
-        }
-      };
+        ws.onmessage = (event) => {
+          try {
+            const payload = JSON.parse(event.data);
+            setLastEventTimestamp(payload.timestamp || new Date().toISOString());
+            refreshTransitOverview();
+          } catch (e) {
+            console.error('WS parse error:', e);
+          }
+        };
 
-      ws.onclose = () => {
-        setWsConnected(false);
-        reconnectTimer = setTimeout(connectWs, 3000);
-      };
+        ws.onclose = () => {
+          hasRealBackendWsRef.current = false;
+          // Keep wsConnected true because clientStandaloneEngine is actively ticking in the browser
+          setWsConnected(true);
+          attempts += 1;
+          if (attempts <= 3) {
+            reconnectTimer = setTimeout(connectWs, 5000);
+          }
+        };
 
-      ws.onerror = () => {
-        ws?.close();
-      };
+        ws.onerror = () => {
+          ws?.close();
+        };
+      } catch {
+        hasRealBackendWsRef.current = false;
+      }
     };
 
     connectWs();
